@@ -23,7 +23,8 @@ bl_info = {
     'author': 'zeffii',
     'category': '3D View',
     'description': 'Set vcols by selecting verts/edges/faces and running this operator',
-    'name': 'Set Vertex Colors'
+    'name': 'Set Vertex Colors',
+    "blender": (2, 91, 0)
 }
 
 
@@ -68,7 +69,7 @@ class BSEVtexSetter(bpy.types.Operator):
  
 def register():
     bpy.types.Scene.BSE_new_color = bpy.props.FloatVectorProperty(
-        name="Color to work with", subtype='COLOR', min=0.0, max=1.0, size=3
+        name="Color to work with", subtype='COLOR', min=0.0, max=1.0, size=4
     )
     bpy.utils.register_class(BSEVtexSetter)
 
